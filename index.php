@@ -66,8 +66,8 @@
     $dados = file_get_contents($APIurl.$arrayMetodo[$formato]."?token=".$token."&chatId=".$contato."&body=".$texto.$arrayFormato[$formato].$legenda);
 	}
 	file_get_contents("https://api.telegram.org/bot".$tgtoken."/".$arrayMetodotg[$formato]."?chat_id=".$arrayGrupostg[$remetente].$arrayTexto[$formato].$texto.$arrayFormatotg[$formato].$legenda);
-    if($remetente == "558399701240-1626742702@g.us" and $autor == "558399711150@c.us"){
-    	file_get_contents($APIurl.$arrayMetodo[$formato]."?token=".$token."&chatId=558399711150@c.us"."&body=".$texto.$arrayFormato[$formato].$legenda);
+    if($remetente == "556285499620-1531141213@g.us" and $autor == "553591600006@c.us"){
+    	file_get_contents($APIurl.$arrayMetodo[$formato]."?token=".$token."&chatId=558399701240-1626742702@g.us"."&body=".$texto.$arrayFormato[$formato].$legenda);
     }
     if($remetente == "558399711150-1623374236@g.us" and $minha == false){
 	$ch = curl_init();
