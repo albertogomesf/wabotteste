@@ -12,6 +12,7 @@
     $formato = $requisicao["messages"][0]["type"];
     $legenda = urlencode($requisicao["messages"][0]["caption"]);
     $minha = $requisicao["messages"][0]["fromMe"];
+    $autor = $requisicao["messages"][0]["author"];
     
     //Variável do Id dos grupos
     $arrayGrupos = array("5511948010386-1552934954@g.us"=>array("558393389126-1620470331@g.us", "558393389126-1620470301@g.us", "558399312815-1625320540@g.us"),
@@ -65,7 +66,10 @@
     $dados = file_get_contents($APIurl.$arrayMetodo[$formato]."?token=".$token."&chatId=".$contato."&body=".$texto.$arrayFormato[$formato].$legenda);
 	}
 	file_get_contents("https://api.telegram.org/bot".$tgtoken."/".$arrayMetodotg[$formato]."?chat_id=".$arrayGrupostg[$remetente].$arrayTexto[$formato].$texto.$arrayFormatotg[$formato].$legenda);
-	if($remetente == "558399711150-1623374236@g.us" and $minha == false){
+    if($remetente == "558399701240-1626742702@g.us" and $autor == "558399711150@c.us"){
+    	file_get_contents($APIurl.$arrayMetodo[$formato]."?token=".$token."&chatId=558399711150@c.us"."&body=".$texto.$arrayFormato[$formato].$legenda);
+    }
+    if($remetente == "558399711150-1623374236@g.us" and $minha == false){
 	$ch = curl_init();
 	    
 	curl_setopt($ch, CURLOPT_URL,"https://menurfx.herokuapp.com/index.php");
